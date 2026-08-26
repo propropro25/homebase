@@ -3,7 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="An independent archive of documents, studies, historical records, visual evidence and lived experience.">
+<meta
+  name="description"
+  content="An independent archive of documents, studies, historical records, visual evidence and lived experience."
+>
 <title>Research Library</title>
 
 <style>
@@ -74,8 +77,65 @@ main {
   white-space:nowrap;
 }
 
+/* Chapter One CTA */
+
+.chapter-cta {
+  margin-top:28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding:17px 20px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--soft);
+  text-decoration:none;
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease;
+}
+
+.chapter-cta:hover {
+  transform:translateY(-2px);
+  border-color:#bababa;
+  background:#f1f1f2;
+}
+
+.chapter-copy {
+  min-width:0;
+}
+
+.chapter-label {
+  display:block;
+  margin-bottom:4px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.chapter-title {
+  display:block;
+  font-size:16px;
+  font-weight:750;
+  line-height:1.3;
+}
+
+.chapter-arrow {
+  flex:0 0 auto;
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff;
+  font-size:19px;
+}
+
 .hero {
-  padding:52px 0 44px;
+  padding:46px 0 44px;
 }
 
 .eyebrow {
@@ -102,6 +162,8 @@ h1 {
   line-height:1.5;
 }
 
+/* Surprise feature */
+
 .surprise {
   display:grid;
   grid-template-columns:1fr auto;
@@ -120,7 +182,7 @@ h1 {
 
 .surprise h2 {
   max-width:700px;
-  margin:12px 0 12px;
+  margin:12px 0;
   font-size:clamp(31px,5vw,53px);
   line-height:1;
   letter-spacing:-.05em;
@@ -149,9 +211,11 @@ h1 {
   cursor:wait;
 }
 
+/* Section directory */
+
 .directory {
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:34px;
   padding:39px 20px 30px;
 }
@@ -171,7 +235,7 @@ h1 {
 .directory span {
   display:block;
   font-size:12px;
-  line-height:1.45;
+  line-height:1.5;
 }
 
 .collection {
@@ -199,13 +263,7 @@ h1 {
   white-space:nowrap;
 }
 
-.section-title-note {
-  margin-left:12px;
-  color:var(--muted);
-  font-size:.7em;
-  font-weight:600;
-  letter-spacing:-.02em;
-}
+/* Cards */
 
 .grid {
   display:grid;
@@ -237,6 +295,7 @@ h1 {
 }
 
 .card:focus-visible,
+.chapter-cta:focus-visible,
 .surprise-button:focus-visible,
 .modal-close:focus-visible,
 .modal-next:focus-visible {
@@ -288,6 +347,8 @@ h1 {
   text-align:center;
   font-size:14px;
 }
+
+/* Surprise modal */
 
 .modal {
   position:fixed;
@@ -387,9 +448,12 @@ h1 {
   cursor:pointer;
 }
 
+/* Responsive */
+
 @media (max-width:900px) {
   .directory {
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr;
+    gap:24px;
   }
 
   .grid {
@@ -404,11 +468,20 @@ h1 {
   }
 
   .hero {
-    padding-top:39px;
+    padding-top:34px;
   }
 
   .library-count {
     font-size:12px;
+  }
+
+  .chapter-cta {
+    align-items:flex-start;
+    margin-top:20px;
+  }
+
+  .chapter-title {
+    font-size:15px;
   }
 
   .surprise {
@@ -421,8 +494,6 @@ h1 {
   }
 
   .directory {
-    grid-template-columns:1fr 1fr;
-    gap:25px 20px;
     padding-left:4px;
     padding-right:4px;
   }
@@ -441,11 +512,6 @@ h1 {
 
   .section-heading p {
     font-size:13px;
-  }
-
-  .section-title-note {
-    display:block;
-    margin:4px 0 0;
   }
 
   .modal {
@@ -470,11 +536,25 @@ h1 {
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="#">Research Library</a>
-    <div class="library-count">23 ways to explore</div>
+    <div class="library-count">22 ways to explore</div>
   </div>
 </header>
 
 <main>
+
+<a
+  class="chapter-cta"
+  href="https://propropro25.github.io/chapter-one/"
+>
+  <span class="chapter-copy">
+    <span class="chapter-label">Begin here</span>
+    <span class="chapter-title">
+      Read Chapter One — an introduction to the archive
+    </span>
+  </span>
+
+  <span class="chapter-arrow" aria-hidden="true">↗</span>
+</a>
 
 <section class="hero">
   <div class="eyebrow">An independent archive</div>
@@ -500,24 +580,13 @@ h1 {
       </p>
     </div>
 
-    <button class="surprise-button" id="surpriseButton">
+    <button class="surprise-button" id="surpriseButton" type="button">
       Surprise Me
     </button>
   </section>
 </section>
 
 <nav class="directory" aria-label="Library categories">
-
-  <a href="#visual-archives">
-    <strong>Visual Archives</strong>
-    <span>
-      COVID · Vaccine Failure · VAERS<br>
-      Post-vaccine possibilities · Reddit<br>
-      Encephalitis · Smallpox · Polio<br>
-      Stroke · MMR · DTaP · Autoimmunity<br>
-      Population Control & Eugenics
-    </span>
-  </a>
 
   <a href="#documents">
     <strong>Documents &amp; Research</strong>
@@ -531,155 +600,29 @@ h1 {
   <a href="#tools">
     <strong>Interactive Tools</strong>
     <span>
-      Vaccine Calculator<br>
-      Addressing the Five Claims<br>
-      Historical Timeline<br>
-      The Risk Chamber<br>
-      Medical Knowledge Assessment
+      Vaccine Calculator · Five Claims<br>
+      Historical Timeline · Risk Chamber<br>
+      Medical Knowledge Assessment<br>
+      Stumble YouTube
     </span>
   </a>
 
-  <a href="#discovery">
-    <strong>Discovery</strong>
+  <a href="#perspectives">
+    <strong>StumbleUpon More Perspectives</strong>
     <span>
-      Visual Discovery<br>
-      PDF Discovery
+      Topic archives · Reddit accounts<br>
+      Historical material · Visual discovery<br>
+      Randomized documents
     </span>
   </a>
 
 </nav>
 
-<section class="collection" id="visual-archives">
-  <div class="section-heading">
-    <h2>Visual archives</h2>
-    <p>13 options</p>
-  </div>
-
-  <div class="grid">
-
-    <a class="card" href="https://propropro25.github.io/covid/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>COVID</h3>
-        <p>Explore records concerning infection, vaccination and reported outcomes.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/vaccine-failures/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Vaccine Failure</h3>
-        <p>Examine records concerning breakthrough infection and vaccine failure.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/vaers/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>VAERS</h3>
-        <p>Explore selected reports and materials concerning adverse-event reporting.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/post-vaccine-possibilities/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Post-vaccine Possibilities</h3>
-        <p>Review records organized around possible post-vaccination outcomes.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/stumble-reddit-library/">
-      <span class="card-type">Visual and lived-experience archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Reddit Library</h3>
-        <p>Explore screenshots and firsthand accounts preserved from public discussions.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/encephalitis/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Encephalitis</h3>
-        <p>Explore records concerning encephalitis and related neurological outcomes.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/smallpox/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Smallpox</h3>
-        <p>Review historical records, vaccination material and smallpox evidence.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/polio/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Polio</h3>
-        <p>Explore historical and contemporary records concerning polio.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/stroke/">
-      <span class="card-type">Visual and lived-experience archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Stroke</h3>
-        <p>Explore collected stroke records, screenshots and firsthand reports.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/MMR/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>MMR</h3>
-        <p>Explore records and research concerning measles, mumps and rubella vaccination.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/DTaP/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>DTaP</h3>
-        <p>Explore records concerning diphtheria, tetanus and pertussis vaccination.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/autoimmunity/">
-      <span class="card-type">Visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Autoimmunity</h3>
-        <p>Explore records concerning autoimmune diagnoses and possible contributing factors.</p>
-      </div>
-    </a>
-
-    <a class="card" href="https://propropro25.github.io/eugenics/">
-      <span class="card-type">Historical visual archive</span>
-      <span class="card-arrow">↗</span>
-      <div>
-        <h3>Population Control &amp; Eugenics</h3>
-        <p>Examine historical records concerning eugenics and population-control policy.</p>
-      </div>
-    </a>
-
-  </div>
-</section>
+<!-- DOCUMENTS AND RESEARCH -->
 
 <section class="collection" id="documents">
   <div class="section-heading">
-    <h2>Documents and research</h2>
+    <h2>Documents &amp; Research</h2>
     <p>3 options</p>
   </div>
 
@@ -715,10 +658,12 @@ h1 {
   </div>
 </section>
 
+<!-- INTERACTIVE TOOLS -->
+
 <section class="collection" id="tools">
   <div class="section-heading">
-    <h2>Interactive tools</h2>
-    <p>5 options</p>
+    <h2>Interactive Tools</h2>
+    <p>6 options</p>
   </div>
 
   <div class="grid">
@@ -768,35 +713,142 @@ h1 {
       </div>
     </a>
 
+    <a class="card" href="https://propropro25.github.io/stumble-youtube/">
+      <span class="card-type">Interactive video discovery</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Stumble YouTube</h3>
+        <p>Move through a randomized collection of selected videos and perspectives.</p>
+      </div>
+    </a>
+
   </div>
 </section>
 
-<section class="collection" id="discovery">
+<!-- STUMBLEUPON MORE PERSPECTIVES -->
+
+<section class="collection" id="perspectives">
   <div class="section-heading">
-    <h2>
-      Discovery
-      <span class="section-title-note">Something random</span>
-    </h2>
-    <p>2 options</p>
+    <h2>StumbleUpon More Perspectives</h2>
+    <p>13 options</p>
   </div>
 
   <div class="grid">
 
+    <a class="card" href="https://propropro25.github.io/covid/">
+      <span class="card-type">Visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>COVID</h3>
+        <p>Explore records concerning infection, vaccination and reported outcomes.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/vaccine-failures/">
+      <span class="card-type">Visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Vaccine Failure</h3>
+        <p>Examine records concerning breakthrough infection and vaccine failure.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/vaers/">
+      <span class="card-type">Visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>VAERS</h3>
+        <p>Explore selected reports and materials concerning adverse-event reporting.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/post-vaccine-possibilities/">
+      <span class="card-type">Visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Post-vaccine Possibilities</h3>
+        <p>Review records organized around possible post-vaccination outcomes.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/stumble-reddit-library/">
+      <span class="card-type">Lived-experience archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Reddit Library</h3>
+        <p>Explore screenshots and firsthand accounts preserved from public discussions.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/encephalitis/">
+      <span class="card-type">Visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Encephalitis</h3>
+        <p>Explore records concerning encephalitis and related neurological outcomes.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/smallpox/">
+      <span class="card-type">Historical visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Smallpox</h3>
+        <p>Review historical records, vaccination material and smallpox evidence.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/polio/">
+      <span class="card-type">Historical visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Polio</h3>
+        <p>Explore historical and contemporary records concerning polio.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/stroke/">
+      <span class="card-type">Visual and lived-experience archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>Stroke</h3>
+        <p>Explore collected stroke records, screenshots and firsthand reports.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/MMR/">
+      <span class="card-type">Visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>MMR</h3>
+        <p>Explore records and research concerning measles, mumps and rubella vaccination.</p>
+      </div>
+    </a>
+
+    <a class="card" href="https://propropro25.github.io/DTaP/">
+      <span class="card-type">Visual archive</span>
+      <span class="card-arrow">↗</span>
+      <div>
+        <h3>DTaP</h3>
+        <p>Explore records concerning diphtheria, tetanus and pertussis vaccination.</p>
+      </div>
+    </a>
+
     <a class="card" href="https://propropro25.github.io/stumble-image-library/">
-      <span class="card-type">Random visual archive</span>
+      <span class="card-type">Random visual discovery</span>
       <span class="card-arrow">↗</span>
       <div>
         <h3>Visual Discovery</h3>
-        <p>Explore randomized groups of images and visual evidence.</p>
+        <p>Explore randomized groups of images and visual evidence from across the archive.</p>
       </div>
     </a>
 
     <a class="card" href="https://propropro25.github.io/stumble-pdf-library/">
-      <span class="card-type">Random document library</span>
+      <span class="card-type">Random document discovery</span>
       <span class="card-arrow">↗</span>
       <div>
         <h3>PDF Discovery</h3>
-        <p>Open a randomly selected paper or document.</p>
+        <p>Open a randomly selected paper or document from the broader collection.</p>
       </div>
     </a>
 
@@ -808,6 +860,8 @@ h1 {
 <footer class="footer">
   An independent archive for direct exploration.
 </footer>
+
+<!-- SURPRISE MODAL -->
 
 <div
   class="modal"
@@ -827,6 +881,7 @@ h1 {
       <button
         class="modal-close"
         id="modalClose"
+        type="button"
         aria-label="Close"
       >
         ×
@@ -845,7 +900,7 @@ h1 {
         Open original ↗
       </a>
 
-      <button class="modal-next" id="modalNext">
+      <button class="modal-next" id="modalNext" type="button">
         Another
       </button>
     </div>
@@ -897,14 +952,14 @@ function loadSurprise() {
     "_" +
     requestNumber;
 
-  const script =
-    document.createElement("script");
+  const script = document.createElement("script");
 
   const timeout = window.setTimeout(() => {
     cleanup();
 
     surpriseButton.disabled = false;
     surpriseButton.textContent = "Try Again";
+    modalNext.disabled = false;
 
     alert(
       "The curated collection did not respond. Please try again."
