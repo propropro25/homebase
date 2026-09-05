@@ -34,12 +34,12 @@ body {
   -webkit-font-smoothing:antialiased;
 }
 
-body.modal-open { overflow:hidden; }
-
 a,button { font:inherit; }
 a { color:inherit; }
 
-.site-header { border-bottom:1px solid #e3e5e6; }
+.site-header {
+  border-bottom:1px solid #e3e5e6;
+}
 
 .header-inner,
 main {
@@ -66,9 +66,13 @@ main {
   text-decoration:none;
 }
 
-.chapter-link:hover { color:var(--deep-sea); }
+.chapter-link:hover {
+  color:var(--deep-sea);
+}
 
-.hero { padding:78px 0 42px; }
+.hero {
+  padding:78px 0 42px;
+}
 
 h1 {
   max-width:850px;
@@ -84,38 +88,6 @@ h1 {
   font-size:clamp(18px,2.3vw,23px);
   line-height:1.45;
 }
-
-.surprise {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  margin:0 0 44px;
-  padding:22px 25px;
-  border-radius:18px;
-  background:var(--deep-sea);
-  color:#fff;
-}
-
-.surprise h2 {
-  margin:0;
-  font-size:clamp(20px,3vw,30px);
-  line-height:1.05;
-  letter-spacing:-.035em;
-}
-
-.surprise-button {
-  flex:0 0 auto;
-  padding:13px 19px;
-  border:0;
-  border-radius:999px;
-  background:#fff;
-  color:var(--deep-sea);
-  font-weight:800;
-  cursor:pointer;
-}
-
-.surprise-button:disabled { opacity:.65; cursor:wait; }
 
 .collection {
   position:relative;
@@ -153,7 +125,10 @@ h1 {
   pointer-events:none;
 }
 
-.collection > * { position:relative; z-index:1; }
+.collection > * {
+  position:relative;
+  z-index:1;
+}
 
 .documents {
   background:linear-gradient(145deg,#f7f9f9 0%,var(--documents) 58%,#eaf0f2 100%);
@@ -177,7 +152,9 @@ h1 {
   margin-left:22px;
 }
 
-.section-heading { margin-bottom:23px; }
+.section-heading {
+  margin-bottom:23px;
+}
 
 .section-heading h2 {
   margin:0;
@@ -239,7 +216,10 @@ h1 {
   transition:background .18s ease,color .18s ease;
 }
 
-.card:hover .card-arrow { background:var(--deep-sea); color:#fff; }
+.card:hover .card-arrow {
+  background:var(--deep-sea);
+  color:#fff;
+}
 
 .card h3 {
   margin:0 0 8px;
@@ -256,12 +236,25 @@ h1 {
   line-height:1.42;
 }
 
-.additional { display:none; }
-.collection.expanded .additional { display:flex; animation:reveal .25s ease both; }
+.additional {
+  display:none;
+}
+
+.collection.expanded .additional {
+  display:flex;
+  animation:reveal .25s ease both;
+}
 
 @keyframes reveal {
-  from { opacity:0; transform:translateY(-8px); }
-  to { opacity:1; transform:translateY(0); }
+  from {
+    opacity:0;
+    transform:translateY(-8px);
+  }
+
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 .expand-button {
@@ -285,10 +278,18 @@ h1 {
   color:#fff;
 }
 
-.expand-icon { font-size:18px; line-height:1; }
-.collection.expanded .expand-icon { transform:rotate(45deg); }
+.expand-icon {
+  font-size:18px;
+  line-height:1;
+}
 
-.stumble .grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.collection.expanded .expand-icon {
+  transform:rotate(45deg);
+}
+
+.stumble .grid {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+}
 
 .footer {
   width:min(1200px,calc(100% - 44px));
@@ -300,130 +301,100 @@ h1 {
   font-size:15px;
 }
 
-.modal {
-  position:fixed;
-  inset:0;
-  z-index:100;
-  display:none;
-  place-items:center;
-  padding:18px;
-  background:rgba(2,13,19,.91);
-}
-
-.modal.open { display:grid; }
-
-.modal-content {
-  width:min(1100px,100%);
-  max-height:calc(100vh - 36px);
-  display:grid;
-  grid-template-rows:auto minmax(0,1fr) auto;
-  overflow:hidden;
-  border-radius:22px;
-  background:#0b202b;
-  color:#fff;
-}
-
-.modal-top {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  padding:14px 17px;
-}
-
-.modal-label {
-  overflow:hidden;
-  color:#b5c0c5;
-  font-size:13px;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-.modal-close {
-  flex:0 0 auto;
-  width:40px;
-  height:40px;
-  border:0;
-  border-radius:50%;
-  background:rgba(255,255,255,.1);
-  color:#fff;
-  font-size:22px;
-  cursor:pointer;
-}
-
-.modal-stage {
-  min-height:320px;
-  display:grid;
-  place-items:center;
-  overflow:auto;
-  background:#020607;
-}
-
-.modal-stage img { display:block; width:100%; max-height:76vh; object-fit:contain; }
-.modal-stage iframe { width:100%; height:76vh; border:0; background:#fff; }
-
-.modal-actions {
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-  padding:14px 17px;
-}
-
-.modal-actions a { align-self:center; color:#c0cbd0; font-size:14px; }
-
-.modal-next {
-  padding:13px 19px;
-  border:0;
-  border-radius:999px;
-  background:#fff;
-  color:var(--deep-sea);
-  font-weight:800;
-  cursor:pointer;
-}
-
 .card:focus-visible,
 .chapter-link:focus-visible,
-.surprise-button:focus-visible,
-.expand-button:focus-visible,
-.modal-close:focus-visible,
-.modal-next:focus-visible {
+.expand-button:focus-visible {
   outline:3px solid #72a9c3;
   outline-offset:3px;
 }
 
 @media (max-width:840px) {
-  .stumble .grid { grid-template-columns:1fr; }
+  .stumble .grid {
+    grid-template-columns:1fr;
+  }
 }
 
 @media (max-width:680px) {
-  .header-inner,main,.footer { width:min(100% - 28px,1200px); }
-  .header-inner { min-height:60px; }
-  .hero { padding:53px 0 32px; }
-  .hero p { max-width:310px; }
-  .surprise { align-items:flex-start; flex-direction:column; margin-bottom:16px; padding:23px; }
-  .surprise-button { width:100%; }
-  .collection { margin-bottom:12px; padding:27px 18px 22px; border-radius:22px; }
-  .tools,.stumble { width:100%; margin-left:0; }
-  .collection::before { top:29px; height:35px; }
-  .section-heading { padding-left:7px; }
-  .grid { grid-template-columns:1fr; }
-  .card { min-height:108px; padding:20px 60px 20px 20px; }
-  .card h3 { margin:0; font-size:21px; }
-  .card p { display:none; }
-  .footer { margin-top:34px; }
-  .modal { padding:0; }
-  .modal-content { height:100%; max-height:none; border-radius:0; }
-  .modal-stage iframe { height:100%; }
+
+  .header-inner,
+  main,
+  .footer {
+    width:min(100% - 28px,1200px);
+  }
+
+  .header-inner {
+    min-height:60px;
+  }
+
+  .hero {
+    padding:53px 0 32px;
+  }
+
+  .hero p {
+    max-width:310px;
+  }
+
+  .collection {
+    margin-bottom:12px;
+    padding:27px 18px 22px;
+    border-radius:22px;
+  }
+
+  .tools,
+  .stumble {
+    width:100%;
+    margin-left:0;
+  }
+
+  .collection::before {
+    top:29px;
+    height:35px;
+  }
+
+  .section-heading {
+    padding-left:7px;
+  }
+
+  .grid {
+    grid-template-columns:1fr;
+  }
+
+  .card {
+    min-height:108px;
+    padding:20px 60px 20px 20px;
+  }
+
+  .card h3 {
+    margin:0;
+    font-size:21px;
+  }
+
+  .card p {
+    display:none;
+  }
+
+  .footer {
+    margin-top:34px;
+  }
 }
 
 @media (prefers-reduced-motion:reduce) {
-  html { scroll-behavior:auto; }
-  *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; }
+  html {
+    scroll-behavior:auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration:.01ms!important;
+    transition-duration:.01ms!important;
+  }
 }
 </style>
 </head>
 
 <body>
+
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="#">Research Library</a>
@@ -432,297 +403,342 @@ h1 {
 </header>
 
 <main>
+
   <section class="hero">
     <h1>Look at the evidence yourself.</h1>
     <p>Research, records and lived experience. See it for yourself.</p>
   </section>
 
-  <section class="surprise" aria-labelledby="surprise-title">
-    <h2 id="surprise-title">Show me something unexpected.</h2>
-    <button class="surprise-button" id="surpriseButton" type="button">Surprise Me →</button>
-  </section>
 
   <section class="collection documents" id="documents">
+
     <div class="section-heading">
       <h2>Documents &amp; Research</h2>
       <p>Read the source material.</p>
     </div>
+
     <div class="grid">
+
       <a class="card" href="https://propropro25.github.io/Vaccine-PDFs/">
         <span class="card-arrow">↗</span>
-        <div><h3>Vaccine PDF Library</h3><p>Read the papers, records and historical documents for yourself.</p></div>
+        <div>
+          <h3>Vaccine PDF Library</h3>
+          <p>Read the papers, records and historical documents for yourself.</p>
+        </div>
       </a>
+
       <a class="card" href="https://propropro25.github.io/AtmosphericConditions/">
         <span class="card-arrow">↗</span>
-        <div><h3>Stumble Upon PubMed</h3><p>Land on a study you probably wouldn’t have searched for.</p></div>
+        <div>
+          <h3>Stumble Upon PubMed</h3>
+          <p>Land on a study you probably wouldn’t have searched for.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/researchexplorer/">
         <span class="card-arrow">↗</span>
-        <div><h3>Vaccine Research Search Engine</h3><p>Search the collection without already knowing what to look for.</p></div>
+        <div>
+          <h3>Vaccine Research Search Engine</h3>
+          <p>Search the collection without already knowing what to look for.</p>
+        </div>
       </a>
+
     </div>
-    <button class="expand-button" type="button" aria-expanded="false"><span class="expand-label">Explore 1 more</span><span class="expand-icon">+</span></button>
+
+    <button class="expand-button" type="button" aria-expanded="false">
+      <span class="expand-label">Explore 1 more</span>
+      <span class="expand-icon">+</span>
+    </button>
+
   </section>
 
+
   <section class="collection tools" id="tools">
+
     <div class="section-heading">
       <h2>Tools</h2>
       <p>Test what you’ve been told.</p>
     </div>
+
     <div class="grid">
+
       <a class="card" href="https://propropro25.github.io/trivia/">
         <span class="card-arrow">↗</span>
-        <div><h3>Technical Trivia</h3><p>See how much of the system beneath the promises you were ever shown.</p></div>
+        <div>
+          <h3>Technical Trivia</h3>
+          <p>See how much of the system beneath the promises you were ever shown.</p>
+        </div>
       </a>
+
       <a class="card" href="https://propropro25.github.io/Diagnosis-Causes/">
         <span class="card-arrow">↗</span>
-        <div><h3>What Does Medicine Know the Cause Of?</h3><p>Choose a diagnosis. See whether medicine knows what caused it.</p></div>
+        <div>
+          <h3>What Does Medicine Know the Cause Of?</h3>
+          <p>Choose a diagnosis. See whether medicine knows what caused it.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/vaxcalculator/">
         <span class="card-arrow">↗</span>
-        <div><h3>Vaccine Ingredient Calculator</h3><p>Choose the vaccines and body weight. See the listed ingredients together.</p></div>
+        <div>
+          <h3>Vaccine Ingredient Calculator</h3>
+          <p>Choose the vaccines and body weight. See the listed ingredients together.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/5-claims/">
         <span class="card-arrow">↗</span>
-        <div><h3>Addressing the Five Claims</h3><p>Follow five familiar claims until the logic runs out.</p></div>
+        <div>
+          <h3>Addressing the Five Claims</h3>
+          <p>Follow five familiar claims until the logic runs out.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/timeline/">
         <span class="card-arrow">↗</span>
-        <div><h3>Historical Timeline</h3><p>Put vaccines, epidemics and medical diagnoses on the same timeline.</p></div>
+        <div>
+          <h3>Historical Timeline</h3>
+          <p>Put vaccines, epidemics and medical diagnoses on the same timeline.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/russian-roulette/">
         <span class="card-arrow">↗</span>
-        <div><h3>The Risk Chamber</h3><p>See what “one in” feels like when the one could be you.</p></div>
+        <div>
+          <h3>The Risk Chamber</h3>
+          <p>See what “one in” feels like when the one could be you.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/data/">
         <span class="card-arrow">↗</span>
-        <div><h3>From Human Experience to Data</h3><p>Watch one human experience become notes, tags, averages and finally a conclusion.</p></div>
+        <div>
+          <h3>From Human Experience to Data</h3>
+          <p>Watch one human experience become notes, tags, averages and finally a conclusion.</p>
+        </div>
       </a>
+
     </div>
-    <button class="expand-button" type="button" aria-expanded="false"><span class="expand-label">Explore 5 more</span><span class="expand-icon">+</span></button>
+
+    <button class="expand-button" type="button" aria-expanded="false">
+      <span class="expand-label">Explore 5 more</span>
+      <span class="expand-icon">+</span>
+    </button>
+
   </section>
 
+
   <section class="collection records" id="records">
+
     <div class="section-heading">
       <h2>Records &amp; Experiences</h2>
       <p>Look at what happened to individual people.</p>
     </div>
+
     <div class="grid">
+
       <a class="card" href="https://propropro25.github.io/smallpox/">
         <span class="card-arrow">↗</span>
-        <div><h3>Smallpox</h3><p>Look through the history, records and images left out of the familiar story.</p></div>
+        <div>
+          <h3>Smallpox</h3>
+          <p>Look through the history, records and images left out of the familiar story.</p>
+        </div>
       </a>
+
       <a class="card" href="https://propropro25.github.io/nightmares/">
         <span class="card-arrow">↗</span>
-        <div><h3>VAERS Nightmares</h3><p>Read the most devastating reports without reducing the people inside them to a count.</p></div>
+        <div>
+          <h3>VAERS Nightmares</h3>
+          <p>Read the most devastating reports without reducing the people inside them to a count.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/covid/">
         <span class="card-arrow">↗</span>
-        <div><h3>COVID</h3><p>Move through records of infection, vaccination and what people reported afterward.</p></div>
+        <div>
+          <h3>COVID</h3>
+          <p>Move through records of infection, vaccination and what people reported afterward.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/vaccine-failures/">
         <span class="card-arrow">↗</span>
-        <div><h3>Vaccine Failure</h3><p>Look through reports of infection and illness after vaccination.</p></div>
+        <div>
+          <h3>Vaccine Failure</h3>
+          <p>Look through reports of infection and illness after vaccination.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/vaers/">
         <span class="card-arrow">↗</span>
-        <div><h3>VAERS</h3><p>Read the reports themselves instead of only hearing what the database proves or doesn’t prove.</p></div>
+        <div>
+          <h3>VAERS</h3>
+          <p>Read the reports themselves instead of only hearing what the database proves or doesn’t prove.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/post-vaccine-possibilities/">
         <span class="card-arrow">↗</span>
-        <div><h3>Post-vaccine Possibilities</h3><p>Explore the range of experiences people have described after vaccination.</p></div>
+        <div>
+          <h3>Post-vaccine Possibilities</h3>
+          <p>Explore the range of experiences people have described after vaccination.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/stumble-reddit-library/">
         <span class="card-arrow">↗</span>
-        <div><h3>Reddit Library</h3><p>Read people describing what happened in their own words.</p></div>
+        <div>
+          <h3>Reddit Library</h3>
+          <p>Read people describing what happened in their own words.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/encephalitis/">
         <span class="card-arrow">↗</span>
-        <div><h3>Encephalitis</h3><p>Follow the records connecting vaccination, brain inflammation and neurological injury.</p></div>
+        <div>
+          <h3>Encephalitis</h3>
+          <p>Follow the records connecting vaccination, brain inflammation and neurological injury.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/polio/">
         <span class="card-arrow">↗</span>
-        <div><h3>Polio</h3><p>Look through the history, changing definitions and records behind the familiar story.</p></div>
+        <div>
+          <h3>Polio</h3>
+          <p>Look through the history, changing definitions and records behind the familiar story.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/stroke/">
         <span class="card-arrow">↗</span>
-        <div><h3>Stroke</h3><p>Read the reports, screenshots and lived experiences collected around stroke.</p></div>
+        <div>
+          <h3>Stroke</h3>
+          <p>Read the reports, screenshots and lived experiences collected around stroke.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/MMR/">
         <span class="card-arrow">↗</span>
-        <div><h3>MMR</h3><p>Explore the research, records and experiences surrounding MMR vaccination.</p></div>
+        <div>
+          <h3>MMR</h3>
+          <p>Explore the research, records and experiences surrounding MMR vaccination.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/DTaP/">
         <span class="card-arrow">↗</span>
-        <div><h3>DTaP</h3><p>Explore the research, records and experiences surrounding DTaP vaccination.</p></div>
+        <div>
+          <h3>DTaP</h3>
+          <p>Explore the research, records and experiences surrounding DTaP vaccination.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/stumble-image-library/">
         <span class="card-arrow">↗</span>
-        <div><h3>Visual Discovery</h3><p>Move randomly through images preserved across the archive.</p></div>
+        <div>
+          <h3>Visual Discovery</h3>
+          <p>Move randomly through images preserved across the archive.</p>
+        </div>
       </a>
+
       <a class="card additional" href="https://propropro25.github.io/stumble-pdf-library/">
         <span class="card-arrow">↗</span>
-        <div><h3>PDF Discovery</h3><p>Open a document you may never have known to search for.</p></div>
+        <div>
+          <h3>PDF Discovery</h3>
+          <p>Open a document you may never have known to search for.</p>
+        </div>
       </a>
+
     </div>
-    <button class="expand-button" type="button" aria-expanded="false"><span class="expand-label">Explore 12 more</span><span class="expand-icon">+</span></button>
+
+    <button class="expand-button" type="button" aria-expanded="false">
+      <span class="expand-label">Explore 12 more</span>
+      <span class="expand-icon">+</span>
+    </button>
+
   </section>
 
+
   <section class="collection stumble" id="stumble">
+
     <div class="section-heading">
       <h2>StumbleUpon</h2>
       <p>Leave the path you would normally follow.</p>
     </div>
+
     <div class="grid">
+
       <a class="card" href="https://propropro25.github.io/AtmosphericConditions/">
         <span class="card-arrow">↗</span>
-        <div><h3>Stumble Upon PubMed</h3><p>Land somewhere unexpected in the medical literature.</p></div>
+        <div>
+          <h3>Stumble Upon PubMed</h3>
+          <p>Land somewhere unexpected in the medical literature.</p>
+        </div>
       </a>
+
       <a class="card" href="https://propropro25.github.io/wormholes/">
         <span class="card-arrow">↗</span>
-        <div><h3>Stumble Into a Rabbit Hole</h3><p>Enter one piece of evidence and follow where it leads.</p></div>
+        <div>
+          <h3>Stumble Into a Rabbit Hole</h3>
+          <p>Enter one piece of evidence and follow where it leads.</p>
+        </div>
       </a>
+
       <a class="card" href="https://propropro25.github.io/stumble-youtube/">
         <span class="card-arrow">↗</span>
-        <div><h3>Stumble Onto YouTube</h3><p>Find a voice, interview or perspective you may never have been shown.</p></div>
+        <div>
+          <h3>Stumble Onto YouTube</h3>
+          <p>Find a voice, interview or perspective you may never have been shown.</p>
+        </div>
       </a>
+
     </div>
+
   </section>
+
 </main>
 
-<footer class="footer">You don’t have to agree with the archive. You only have to be willing to look.</footer>
 
-<div class="modal" id="surpriseModal" role="dialog" aria-modal="true" aria-label="Surprise selection" aria-hidden="true">
-  <div class="modal-content">
-    <div class="modal-top">
-      <div class="modal-label" id="modalLabel">Selection</div>
-      <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
-    </div>
-    <div class="modal-stage" id="modalStage"></div>
-    <div class="modal-actions">
-      <a id="originalLink" href="#" target="_blank" rel="noopener">Open original ↗</a>
-      <button class="modal-next" id="modalNext" type="button">Another</button>
-    </div>
-  </div>
-</div>
+<footer class="footer">
+  You don’t have to agree with the archive. You only have to be willing to look.
+</footer>
+
 
 <script>
-const SURPRISE_ENDPOINT="https://script.google.com/macros/s/AKfycbxsv025tYtKGE0-o8gXFUVyci0vPUeydmSqmrww7ml1uKLxSXgeHC8fj3L9BonKitMmZA/exec";
 
-document.querySelectorAll(".expand-button").forEach(button=>{
-  const section=button.closest(".collection");
-  const count=section.querySelectorAll(".additional").length;
-  const label=button.querySelector(".expand-label");
-  button.addEventListener("click",()=>{
-    const expanded=section.classList.toggle("expanded");
-    button.setAttribute("aria-expanded",String(expanded));
-    label.textContent=expanded?"Show less":`Explore ${count} more`;
-    if(!expanded)section.scrollIntoView({behavior:"smooth",block:"start"});
+document.querySelectorAll(".expand-button").forEach(button => {
+
+  const section = button.closest(".collection");
+  const count = section.querySelectorAll(".additional").length;
+  const label = button.querySelector(".expand-label");
+
+  button.addEventListener("click", () => {
+
+    const expanded =
+      section.classList.toggle("expanded");
+
+    button.setAttribute(
+      "aria-expanded",
+      String(expanded)
+    );
+
+    label.textContent =
+      expanded
+        ? "Show less"
+        : `Explore ${count} more`;
+
+    if (!expanded) {
+      section.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+    }
+
   });
+
 });
 
-const surpriseButton=document.getElementById("surpriseButton");
-const surpriseModal=document.getElementById("surpriseModal");
-const modalClose=document.getElementById("modalClose");
-const modalNext=document.getElementById("modalNext");
-const modalStage=document.getElementById("modalStage");
-const modalLabel=document.getElementById("modalLabel");
-const originalLink=document.getElementById("originalLink");
-let currentItemId="";
-let previousFocus=null;
-let requestNumber=0;
-
-function loadSurprise(){
-  surpriseButton.disabled=true;
-  surpriseButton.textContent="Finding…";
-  modalNext.disabled=true;
-  requestNumber+=1;
-  const callbackName=`receiveSurprise_${Date.now()}_${requestNumber}`;
-  const script=document.createElement("script");
-  const timeout=window.setTimeout(()=>{
-    cleanup();
-    surpriseButton.disabled=false;
-    surpriseButton.textContent="Try Again";
-    modalNext.disabled=false;
-    alert("The collection did not respond. Please try again.");
-  },20000);
-
-  function cleanup(){
-    window.clearTimeout(timeout);
-    if(script.parentNode)script.parentNode.removeChild(script);
-    try{delete window[callbackName];}catch(error){window[callbackName]=undefined;}
-  }
-
-  window[callbackName]=response=>{
-    cleanup();
-    const item=response&&(response.item||(Array.isArray(response.items)?response.items[0]:null));
-    if(!item){
-      surpriseButton.disabled=false;
-      surpriseButton.textContent="Try Again";
-      modalNext.disabled=false;
-      alert("No items were returned.");
-      return;
-    }
-    showSurprise(item);
-  };
-
-  const parameters=new URLSearchParams({callback:callbackName,exclude:currentItemId||"",time:String(Date.now())});
-  script.src=`${SURPRISE_ENDPOINT}?${parameters.toString()}`;
-  script.onerror=()=>{
-    cleanup();
-    surpriseButton.disabled=false;
-    surpriseButton.textContent="Try Again";
-    modalNext.disabled=false;
-    alert("The collection could not be loaded.");
-  };
-  document.body.appendChild(script);
-}
-
-function showSurprise(item){
-  currentItemId=item.id||item.fileId||item.name||String(Date.now());
-  const name=item.name||item.title||"Selection";
-  const category=item.category||item.folder||"";
-  const mimeType=String(item.mimeType||item.type||"").toLowerCase();
-  const source=item.previewUrl||item.embedUrl||item.url||item.src||item.downloadUrl||"";
-  const original=item.originalUrl||item.driveUrl||item.url||source;
-  modalLabel.textContent=category?`${category} · ${name}`:name;
-  originalLink.href=original||"#";
-  modalStage.replaceChildren();
-  const isPDF=mimeType.includes("pdf")||/\.pdf(?:$|\?)/i.test(source);
-  if(isPDF){
-    const frame=document.createElement("iframe");
-    frame.src=source;
-    frame.title=name;
-    modalStage.appendChild(frame);
-  }else{
-    const image=document.createElement("img");
-    image.src=source;
-    image.alt=name;
-    modalStage.appendChild(image);
-  }
-  previousFocus=document.activeElement;
-  surpriseModal.classList.add("open");
-  surpriseModal.setAttribute("aria-hidden","false");
-  document.body.classList.add("modal-open");
-  surpriseButton.disabled=false;
-  surpriseButton.textContent="Surprise Me →";
-  modalNext.disabled=false;
-  modalClose.focus();
-}
-
-function closeModal(){
-  surpriseModal.classList.remove("open");
-  surpriseModal.setAttribute("aria-hidden","true");
-  document.body.classList.remove("modal-open");
-  modalStage.replaceChildren();
-  if(previousFocus)previousFocus.focus();
-}
-
-surpriseButton.addEventListener("click",loadSurprise);
-modalNext.addEventListener("click",loadSurprise);
-modalClose.addEventListener("click",closeModal);
-surpriseModal.addEventListener("click",event=>{if(event.target===surpriseModal)closeModal();});
-document.addEventListener("keydown",event=>{if(event.key==="Escape"&&surpriseModal.classList.contains("open"))closeModal();});
 </script>
+
 </body>
 </html>
